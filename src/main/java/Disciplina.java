@@ -29,4 +29,15 @@ public class Disciplina {
 	public void setRecordMundial(String recordMundial) {
 		this.recordMundial = recordMundial;
 	}
+
+	public void mostrarInformacion() {
+		System.out.println("Nombre disciplina: " + nombre);
+		System.out.println("Número participantes: " + numeroDeParticipantes);
+		System.out.println("Récord mundial: " + recordMundial);
+		System.out.println("Equipos que participan:");
+		for (Equipo equipo : equipos) {
+			System.out.println("- " + equipo.getNombre());
+		}
+	}
+
 }

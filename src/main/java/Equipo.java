@@ -15,11 +15,19 @@ public class Equipo {
 	}
 
 	public ArrayList<Atleta> getListaAtletas() {
-		throw new UnsupportedOperationException();
+		return this.atletas;
 	}
 
 	public void setListaAtletas(ArrayList<Atleta> listaAtletas) {
-		throw new UnsupportedOperationException();
+		this.atletas = listaAtletas;
+	}
+
+	public void agregarAtleta(Atleta atleta) {
+		atletas.add(atleta);
+	}
+
+	public void eliminarAtleta(Atleta atleta) {
+		atletas.remove(atleta);
 	}
 
 	public Disciplina getDisciplina() {
@@ -28,5 +36,14 @@ public class Equipo {
 
 	public void setDisciplina(Disciplina disciplina) {
 		this.disciplina = disciplina;
+	}
+
+	public void mostrarInformacion() {
+		System.out.println("Nombre equipo: " + nombre);
+		System.out.println("Disciplina: " + (disciplina != null ? disciplina.getNombre() : "N/A"));
+		System.out.println("Atletas en equipo:");
+		for (Atleta atleta : atletas) {
+			System.out.println("- " + atleta.getNombre());
+		}
 	}
 }
